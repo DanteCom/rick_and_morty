@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:rick_and_morty/app/shared/shared.dart';
-import 'package:rick_and_morty/app/ui/theme/theme.dart';
+import 'package:rick_and_morty/shared/shared.dart';
+import 'package:rick_and_morty/app/theme/theme.dart';
 
 class AppShellScreen extends StatefulWidget {
   final StatefulNavigationShell navigationShell;
@@ -57,8 +57,10 @@ class _AppShellScreenState extends State<AppShellScreen> {
                     ),
                     Expanded(
                       child: Tabbs(
-                        title: 'Эпизоды',
-                        icon: Vectors.episode,
+                        width: 20,
+                        height: 20,
+                        title: 'Избранные',
+                        icon: Vectors.heartOutline,
                         isActive: currentIndex == 2,
                         onPressed: currentIndex == 2 ? null : onEpisodes,
                       ),
@@ -85,11 +87,15 @@ class _AppShellScreenState extends State<AppShellScreen> {
 class Tabbs extends StatelessWidget {
   final String icon;
   final String title;
+  final double width;
+  final double height;
   final bool isActive;
   final void Function()? onPressed;
 
   const Tabbs({
     super.key,
+    this.width = 24,
+    this.height = 24,
     required this.icon,
     required this.title,
     required this.isActive,
@@ -107,7 +113,13 @@ class Tabbs extends StatelessWidget {
       padding: EdgeInsets.zero,
       child: Column(
         children: [
-          SvgIcon(icon, width: 24, height: 24, fit: BoxFit.cover, color: color),
+          SvgIcon(
+            icon,
+            width: width,
+            color: color,
+            height: height,
+            fit: BoxFit.contain,
+          ),
           Text(title, style: FontStyles.s12w400in(color)),
         ],
       ),

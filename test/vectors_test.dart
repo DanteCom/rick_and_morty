@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rick_and_morty/app/shared/resources/resources.dart';
+import 'package:rick_and_morty/shared/resources/resources.dart';
 
 void main() {
   test('vectors assets test', () {
@@ -11,6 +11,8 @@ void main() {
     expect(File(Vectors.episode).existsSync(), isTrue);
     expect(File(Vectors.filter).existsSync(), isTrue);
     expect(File(Vectors.grid).existsSync(), isTrue);
+    expect(File(Vectors.heart).existsSync(), isTrue);
+    expect(File(Vectors.heartOutline).existsSync(), isTrue);
     expect(File(Vectors.location).existsSync(), isTrue);
     expect(File(Vectors.menu).existsSync(), isTrue);
     expect(File(Vectors.search).existsSync(), isTrue);

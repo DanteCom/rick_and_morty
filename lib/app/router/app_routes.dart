@@ -4,7 +4,7 @@ class AppRoutes {
 
   static const splash = AppRoutes._(path: '/splash', name: 'splash');
   static const settings = AppRoutes._(path: '/settings', name: 'settings');
-  static const episodes = AppRoutes._(path: '/episodes', name: 'episodes');
+  static const favorites = AppRoutes._(path: '/favorites', name: 'favorites');
   static const locations = AppRoutes._(path: '/locations', name: 'locations');
   static const characters = AppRoutes._(
     path: '/characters',

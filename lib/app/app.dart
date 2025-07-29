@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty/app/domain/blocs/locations/locations_bloc.dart';
-import 'package:rick_and_morty/app/ui/theme/theme.dart';
+import 'package:rick_and_morty/app/theme/theme.dart';
 import 'package:rick_and_morty/app/router/app_router.dart';
-import 'package:rick_and_morty/app/domain/blocs/blocs.dart';
-import 'package:rick_and_morty/app/domain/cubits/cubits.dart';
+import 'package:rick_and_morty/features/favorites/bloc/favorites_bloc.dart';
+import 'package:rick_and_morty/features/locations/bloc/locations_bloc.dart';
+import 'package:rick_and_morty/features/characters/bloc/characters_bloc.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -16,6 +16,7 @@ class App extends StatelessWidget {
         BlocProvider(create: (context) => AppThemeCubit()),
         BlocProvider(create: (context) => CharactersBloc()),
         BlocProvider(create: (context) => LocationsBloc()),
+        BlocProvider(create: (context) => FavoritesBloc()),
       ],
       child: BlocBuilder<AppThemeCubit, ThemeMode>(
         builder: (context, mode) {

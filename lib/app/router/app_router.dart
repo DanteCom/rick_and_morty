@@ -1,9 +1,14 @@
-import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:rick_and_morty/app/router/app_routes.dart';
-import 'package:rick_and_morty/app/ui/screens/screens.dart';
-import 'package:rick_and_morty/app/domain/blocs/blocs.dart';
 import 'package:rick_and_morty/app/shell/app_shell_screen.dart';
+import 'package:rick_and_morty/features/splash/splash_screen.dart';
+import 'package:rick_and_morty/features/settings/settings_screen.dart';
+import 'package:rick_and_morty/features/character/bloc/character_bloc.dart';
+import 'package:rick_and_morty/features/character/screens/character_screen.dart';
+import 'package:rick_and_morty/features/favorites/screens/favorites_screen.dart';
+import 'package:rick_and_morty/features/locations/screens/locations_screen.dart';
+import 'package:rick_and_morty/features/characters/screens/characters_screen.dart';
 
 class AppRouter {
   static final routerConfig = GoRouter(
@@ -56,9 +61,9 @@ class AppRouter {
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: AppRoutes.episodes.path,
-                name: AppRoutes.episodes.name,
-                builder: (context, state) => EpisodesScreen(),
+                path: AppRoutes.favorites.path,
+                name: AppRoutes.favorites.name,
+                builder: (context, state) => FavoritesScreen(),
               ),
             ],
           ),
